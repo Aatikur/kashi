@@ -13,4 +13,9 @@ Route::get('/', function () {
 
 Route::get('/product', function () {
     return view('web.product');
-})->name('web.p
+})->name('web.product');
+
+Route::group(['namespace' => 'Web'], function () {
+    Route::get('/category','WebController@category')->name('web.category');
+    
+});

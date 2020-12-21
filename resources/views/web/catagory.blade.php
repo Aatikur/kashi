@@ -33,20 +33,18 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        @foreach($category as  $value) 
-                                            <td>{{ $value->name }}</td>
-                                        @endforeach
+                                        <td>HDPE and MDPE Pipes</td>
                                         <td>
                                             HDPE Drinking Water Pipes
                                         </td>
-                                        <td><a href="{{ route('web.product') }}">Drinking Water Pipes</a></td>
+                                        <td><a href="{{route('web.product')}}">Drinking Water Pipes</a></td>
                                     </tr>
-                                    {{-- <tr>
+                                    <tr>
                                         <td></td>
                                         <td>
                                             HDPE PLB Duct Pipe
                                         </td>
-                                        <td><a href="{{ route('web.product') }}">Duct Pipe</a></td>
+                                        <td><a href="{{route('web.product')}}">Duct Pipe</a></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -54,12 +52,12 @@
                                             HDPE Drinking Water Fitting
                                         </td>
                                         <td>                                            
-                                            <a href="{{ route('web.product') }}">Elbow</a> <br>
-                                            <a href="{{ route('web.product') }}">Tee</a> <br>
-                                            <a href="{{ route('web.product') }}">Reducer</a> <br>
-                                            <a href="{{ route('web.product') }}">Saddle or D Joint</a> <br>
-                                            <a href="{{ route('web.product') }}">End Cap </a><br>
-                                            <a href="{{ route('web.product') }}">Slipon Flanges</a>
+                                            <a href="{{route('web.product')}}">Elbow</a> <br>
+                                            <a href="{{route('web.product')}}">Tee</a> <br>
+                                            <a href="{{route('web.product')}}">Reducer</a> <br>
+                                            <a href="{{route('web.product')}}">Saddle or D Joint</a> <br>
+                                            <a href="{{route('web.product')}}">End Cap </a><br>
+                                            <a href="{{route('web.product')}}">Slipon Flanges</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -67,7 +65,7 @@
                                         <td>
                                             MDPE Pipes
                                         </td>
-                                        <td><a href="{{ route('web.product') }}">Pipes</a></td>
+                                        <td><a href="{{route('web.product')}}">Pipes</a></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -75,10 +73,10 @@
                                         	MDPE Fittings
                                         </td>
                                         <td>
-                                            <a href="{{ route('web.product') }}">Elbow</a> <br>
-                                            <a href="{{ route('web.product') }}">Tee</a> <br>
-                                            <a href="{{ route('web.product') }}">Reducer</a> <br>
-                                            <a href="{{ route('web.product') }}">Coupler</a>
+                                            <a href="{{route('web.product')}}">Elbow</a> <br>
+                                            <a href="{{route('web.product')}}">Tee</a> <br>
+                                            <a href="{{route('web.product')}}">Reducer</a> <br>
+                                            <a href="{{route('web.product')}}">Coupler</a>
                                         </td>
                                     </tr>
                                     <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
@@ -87,7 +85,7 @@
                                         <td>
                                             UPVC Cashing Pipe
                                         </td>
-                                        <td><a href="{{ route('web.product') }}">Cashing Pipe</a></td>
+                                        <td><a href="{{route('web.product')}}">Cashing Pipe</a></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -95,11 +93,11 @@
                                             UPVC Cashing Pipe Fittings
                                         </td>
                                         <td>                                            
-                                            <a href="{{ route('web.product') }}">UPVC Cashing Reducer</a> <br>
-                                            <a href="{{ route('web.product') }}">UPVC Cashing Elbow</a> <br>
-                                            <a href="{{ route('web.product') }}">UPVC Cashing Tee</a> <br>
-                                            <a href="{{ route('web.product') }}">UPVC Cashing Coupler</a> <br>
-                                            <a href="{{ route('web.product') }}">UPVC END Cap</a>
+                                            <a href="{{route('web.product')}}">UPVC Cashing Reducer</a> <br>
+                                            <a href="{{route('web.product')}}">UPVC Cashing Elbow</a> <br>
+                                            <a href="{{route('web.product')}}">UPVC Cashing Tee</a> <br>
+                                            <a href="{{route('web.product')}}">UPVC Cashing Coupler</a> <br>
+                                            <a href="{{route('web.product')}}">UPVC END Cap</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -107,8 +105,8 @@
                                         <td>
                                             Column Pipes
                                         </td>
-                                        <td><a href="{{ route('web.product') }}">Column Pipe</a></td>
-                                    </tr> --}}
+                                        <td><a href="{{route('web.product')}}">Column Pipe</a></td>
+                                    </tr>
                                     <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
                                 </tbody>
                             </table>
@@ -118,4 +116,4 @@
                 
             </div><!--Main Content End-->
 @endsection        
-                 
+                    
