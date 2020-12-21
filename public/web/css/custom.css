@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+.tnit-logo img {
+  width: 350px;
+  margin: 10px 0 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.EnquiryMain{
+  margin-top: 140px;
+}
+
+.EnquiryForm{
+height: auto;
+}
+
+.InnerContent{
+padding-top: 140px;
+}
+.EnquiryMain{width:350px;min-height:500px;bottom: 0;right:0;position:fixed;/* margin-top:206px; */margin-right:-315px;z-index:999;-webkit-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out;}
+.EnquiryMain h1{font-size:25px;line-height:30px;margin-top: 0;margin-bottom: 10px;color: #fff;text-align: center;}
+.EnquiryMain h2{transform: rotate(270deg) scale(1) skew(1deg) translate(-13px);-webkit-transform: rotate(270deg) scale(1) skew(1deg) translate(-13px);-moz-transform:rotate(270deg) scale(1) skew(1deg) translate(0px);-o-transform:rotate(270deg) scale(1) skew(1deg) translate(0px);-ms-transform:rotate(270deg) scale(1) skew(1deg) translate(0px);margin-left:-56px;margin-top:56px;font-size:16px;width:150px;text-align:center;color:#FFF;text-transform: uppercase;}
+.EnquiryMain p{margin-bottom:10px;font-size:13px;color: #eee;text-align: center;}
+.close{margin-right:-310px}
+.open{margin-right:-0px}
+.EnquiryTab{width:40px;height: 180px;background-color: #353744;float:left;cursor:pointer;margin-top: 68vh;-webkit-box-shadow:-5px 0 5px -3px rgba(0,0,0,0.3);box-shadow:-5px 0 5px -3px rgba(0,0,0,0.3);border-radius: 20px 0 0 20px;}
+.ipl2{right:0px; top:50%; position:fixed;z-index: 111;}
+.EnquiryMain h4{font-size: 23px;text-align:center;color: #e8e8e8;text-transform: uppercase;margin: 20px 0 0;}
+.EnquiryMain h3{font-size: 43px;color:#1081d1;text-align:center;font-family:'arimobold';padding-bottom:10px;margin-top: 10px;margin-bottom:15px;border-bottom:1px solid #CCC;}
+.EnquiryMain h3 a{color:#1081d1}
+.EnquiryForm{width:310px;height: 100vh;padding: 10px 20px;float:right;background-color: #353744;}
+.Thankyoumsg{width:310px;height:500px;top:0;position:absolute;background-color:#fff;-webkit-box-shadow:-5px 0 5px -3px rgba(0,0,0,0.3);box-shadow:-5px 0 5px -3px rgba(0,0,0,0.3)}
+.Thankyoumsg p{text-align:center;margin-top:200px;color:#0095da;font-size:20px}
+.EnquiryForm select{margin:0 10px 10px 0;width: 99%;border:1px solid #cacaca;padding:5px 10px;color:#888;}
+.EnquiryMain label{font-size:14px;line-height:30px}
+.EnquiryMain input[type="text"],textarea{margin:0;margin-bottom:10px;width:99%;border:1px solid #cacaca;padding:5px 10px;font-size:14px}
+.EnquiryMain input[type="text"]:focus{background-color:#e7e7e7}
+.EnquiryMain input[type="submit"]{margin:0;margin-bottom:15px;width:100%;font-size:14px;color:#FFF;border:0;text-align:center;background-color:#1081d1;padding:10px}
+.EnquiryMain input::-webkit-input-placeholder{color:#888}
+.EnquiryMain input :-moz-placeholder{color:#888}
+.EnquiryMain input ::-moz-placeholder{color:#888}
+.EnquiryMain input:-ms-input-placeholder{color:#888}
+.EnquiryMain h3 a:hover {text-decoration:none;}
+.EnquiryMain .tnit-btn-style_v2 {padding-top: 8px;padding-bottom: 8px;margin-top: 10px;}
+.tnit-catagory .catagory-block {
+  padding: 0;
+  background: #2dc3b5;
+  height: 300px;
+  margin: 0 2px 4px;
+  z-index: 2;
+  overflow: hidden;
+  transition: 2s ease-in-out;
+}
+.tnit-catagory .catagory-block img{width:100%}
+.tnit-catagory .catagory-block h4 {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  z-index: 99;
+  background: #ffffffd9;
+  padding: 30px 40px;
+}
+.tnit-catagory .catagory-block img::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+}
+.tnit-catagory .catagory-block:hover img {
+  transform: scale(1.1);
+}
+.tnit-spl span {
+  color: #fd00020f;
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.tnit-heading-outer.tnit-spl h2 {
+  margin-top: -85px;
+  margin-bottom: 40px;
+}
+.product-table thead th {
+  text-align: center;
+  background: #f52b2d;
+  color: #fff;
+}
+.product-table tr:nth-child(even){
+  background-color: #eee;
+}
+.tnit-product-detail-item .tnit-text-outer h3 a {
+  color: #f52b2d;
+}
+.wi-agri{
+  font-size: 45px!important;
+  font-weight: 700!important;
+  font-family: 'Castoro', serif;
+  color: #353535!important;;
+  
+}
+.wi-agri span{
+  font-size: 60px!important;
+  font-weight: 700!important;
+  text-shadow: 10px 7px 3px #a5a2a2;
+  font-family: montserrat, sans-serif;
+}
+
+/*------- Responsive -------*/
+@media(max-width:425px) {
+  .container.tnit-container-after:after {
+    display:none
+  }
+  .tnit-logo a img {
+    width: 100%;
+  }
+}
+
+@media(max-width:600px) and (min-width:990px) {
+
+}
+
+@media(min-width:991px) {
+  .tnit-banner .slider-item {
+      height: 450px;
+  }
+}
