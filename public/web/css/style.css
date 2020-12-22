@@ -111,6 +111,10 @@ ol ol {
     width: 100%;
     position: relative;
 }
+.pd-tb30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 .pd-tb70 {
     padding-top: 68px;
     padding-bottom: 68px;
@@ -1132,6 +1136,7 @@ ol ol {
     position: relative;
     box-shadow: inset -1px 3px 6px #e2e2e2;
     z-index: 999;
+    background: #ececec;
 }
 .tnit-banner-image_v2 {
     background: url(../images/inner-banner-img-02.jpg) top center no-repeat;
@@ -1386,7 +1391,7 @@ ol ol {
     transform: translateY(0);
 }
 .tnit-about-section_v2 .tnit-about-text {
-    padding-top: 140px;
+    padding: 10px 0;
 }
 .tnit-qualities-section {
     float: left;
@@ -2799,6 +2804,10 @@ ul.tnit-tabs-nav li:hover a {
 }
 .tnit-blog-item .tnit-text h4 {
     margin: 0 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .tnit-blog-item .tnit-text .tnit-meta-listed {
     margin-bottom: 13px;
@@ -3001,10 +3010,11 @@ ul.tnit-tabs-nav li:hover a {
 .tl-review-form .inner-holder input[type="email"],
 .tl-review-form .inner-holder input[type="tel"],
 .tl-review-form .inner-holder input[type="password"],
+.tl-review-form .inner-holder input[type="file"],
 .tl-review-form .inner-holder textarea,
 .tl-review-form .inner-holder select {
     font-size: 14px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #fd000245;
     height: 38px;
     float: left;
     width: 100%;
@@ -3012,6 +3022,8 @@ ul.tnit-tabs-nav li:hover a {
     line-height: 38px;
     padding: 0 10px;
     color: #353744;
+    outline: none;
+    background: #fff;
 }
 .tnit-proceed-form .inner-holder input[type="text"],
 .tnit-proceed-form .inner-holder input[type="email"],
@@ -3126,10 +3138,16 @@ ul.tnit-tabs-nav li:hover a {
 }
 .tnit-blog-item.tnit-blog-item_v2 {
     border: 1px solid #ededed;
+    box-shadow: 2px 3px 10px #e2e2e2;
 }
 .tnit-blog-item_v2 .tnit-text p {
     font-size: 14px;
     margin-bottom: 22px;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .tnit-blog-item_v2 .date-box {
     width: 56px;
@@ -3229,7 +3247,9 @@ ul.tnit-tabs-nav li:hover a {
     float: left;
     width: 100%;
     margin: 0 0 28px;
-    padding: 0;
+    padding: 20px;
+    box-shadow: 0px 0px 13px 3px #e2e2e2;
+    background: #f3f3f3e0;
 }
 .tnit-even-listed > li {
     list-style: none;
@@ -3262,10 +3282,6 @@ ul.tnit-tabs-nav li:hover a {
     visibility: visible;
 }
 .tnit-event-item:after {
-    content: "";
-    background: url(../images/coming-up-list-img.png) top left no-repeat;
-    position: absolute;
-    left: 0;
     top: 0;
     width: 0;
     height: 100%;
@@ -3278,13 +3294,8 @@ ul.tnit-tabs-nav li:hover a {
     visibility: visible;
     width: 100%;
 }
-.tnit-event-item:hover .date-box,
-.tnit-event-item:hover .date-box span,
-.tnit-event-item:hover .tnit-text span .fa,
-.tnit-event-item:hover .tnit-text h4,
-.tnit-event-item .tnit-text span,
-.tnit-event-item:hover .tnit-btn-style1 {
-    color: #fff;
+.tnit-event-item:hover .date-box, .tnit-event-item:hover .date-box span {
+    /* color: #fff; */
 }
 .tnit-event-item:hover .tnit-btn-style1:before,
 .tnit-event-item:hover .tnit-btn-style1:after {
@@ -3299,7 +3310,7 @@ ul.tnit-tabs-nav li:hover a {
     border-right: 1px solid #e0e0e0;
 }
 .tnit-event-item:hover .date-box {
-    border-color: #fff;
+    border-color: #fd0002;
 }
 .tnit-event-item .date-box span {
     font-size: 36px;
@@ -3321,7 +3332,7 @@ ul.tnit-tabs-nav li:hover a {
     color: #353535;
 }
 .tnit-event-item:hover .tnit-text span {
-    color: #fff;
+    /* color: #fd0002; */
 }
 .tnit-event-item .tnit-text span .fa {
     margin-right: 5px;
@@ -3413,6 +3424,7 @@ ul.tnit-tabs-nav li:hover a {
 .tnit-pagination-row {
     float: left;
     width: 100%;
+    margin-top: 5vh;
 }
 .tnit-pagination-row .pagination {
     margin: 0;
@@ -4127,11 +4139,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .tnit-sidebar-outer {
     float: left;
     width: 100%;
-    padding-left: 20px;
-    border-left: 1px solid #e8e8e8;
+    padding-right: 20px;
+    border-right: 1px solid #e8e8e8;
 }
 .tnit-sidebar-outer .widget {
-    margin-bottom: 38px;
+    margin-bottom: 0;
 }
 .tnit-sidebar-outer .widget.mb-0 {
     margin-bottom: 0;
@@ -4622,7 +4634,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .tnit-footer .widget-about {
     float: left;
-    width: 100%;
+    width: 90%;
     position: relative;
     padding: 52px 40px 51px;
     margin-bottom: -60px;
@@ -4656,9 +4668,9 @@ input[type="number"]::-webkit-outer-spin-button {
     color: #636363;
 }
 .about-info-listed li .fa {
-    font-size: 14px;
+    font-size: 20px;
     width: 25px;
-    height: 30px;
+    height: 36px;
     float: left;
     margin-top: 5px;
 }

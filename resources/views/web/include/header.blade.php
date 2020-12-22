@@ -58,21 +58,10 @@
                                    <a href="#" class="btn-account" data-toggle="modal" data-target="#tnit-modal">My Account</a>
                                     <!--Socail Links start-->
                                     <ul class="tnit-social-links">
-                                        <li>
-                                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                                        </li>
+                                        <li><a target="_blank" href="https://www.facebook.com/Kashivishwanath-Pipes-Pvt-Ltd-106708927966089"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a target="_blank" href="https://twitter.com/Kashiviofficial"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a target="_blank" href="https://www.instagram.com/kashivishwanathpipe/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a target="_blank" href="https://in.pinterest.com/pin/653514595925032366/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                                     </ul><!--Socail Links End-->
                                 </div>
                             </div>
@@ -90,23 +79,12 @@
                                     <div class="collapse navbar-collapse" id="tnit-navbar-collapse">
                                       <ul class="nav navbar-nav">
                                         <li><a href="{{ route('web.index') }}">Home</a></li>
-                                        <li class="dropdown"> <a href="video.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
-                                          <ul class="dropdown-menu">
-                                            <li><a href="video.html">Our Company</a></li>
-                                            <li><a href="video-col2.html">History</a></li>
-                                            <li><a href="video-sidebar.html">Leadership</a></li>
-                                          </ul>
-                                        </li>
-                                        <li><a href="{{ route('web.category') }}">Our Product</a></li>
-                                        <li class="dropdown"> <a href="courses.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
-                                          <ul class="dropdown-menu">
-                                            <li><a href="courses.html">Courses</a></li>
-                                            <li><a href="courses-list.html">Courses List</a></li>
-                                            <li><a href="courses-detail.html">Courses Detail</a></li>
-                                          </ul>
-                                        </li>
-                                        <li><a href="event.html">Event</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{ route('web.about.about') }}">About</a></li>
+                                        <li><a href="{{ route('web.category') }}">Product</a></li>
+                                        <li><a href="{{ route('web.blog.blog') }}">Blog</a></li>
+                                        <li><a href="{{ route('web.testimonial.testimonial') }}">Testimonial</a></li>
+                                        <li><a href="{{ route('web.career.career') }}">Career</a></li>
+                                        <li><a href="{{ route('web.contact.contact') }}">Contact</a></li>
                                       </ul>
                                     </div>
                                     <!-- /.navbar-collapse --> 

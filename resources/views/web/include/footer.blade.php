@@ -10,19 +10,19 @@
                                       <strong class="ft-logo">
                                           <a href="index.html"><img src="{{ asset('web/images/ft-logo.png')}}" class="img-responsive"></a>
                                       </strong>
-                                      <p>Suspendisse nec est nunc. Sed sed sem in libero lacinia suscipit non ac neque. Integer scelerisque tellus est.</p>
                                       <ul class="about-info-listed">
                                           <li>
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                9311 Sherman Ave. Groton,  CT 06340
+                                                103, Janak Palace, Manglam Enclave, RPS more Bailey Road, Patna- 801503.
                                           </li>
                                           <li>
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                                <a href="tel:+00123456789">+00 123 456 789</a>
+                                                <a href="tel:+91 80489 24086">+91 80489 24086</a>
+                                                <a href="tel:+91 74850 67263">+91 74850 67263</a>
                                           </li>
                                           <li>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                <a href="https://www.topnotchinv.com/cdn-cgi/l/email-protection#bcd5d2dad3fcd1c5cad3d5dfd992dfd3d1"><span class="__cf_email__" data-cfemail="0a63646c654a67737c6563696f24696567">[email&#160;protected]</span></a>
+                                                <a href="mailto:kashivishwanathpipe@gmail.com"><span>&nbsp;kashivishwanathpipe@gmail.com</span></a>
                                           </li>
                                       </ul>
                                   </div><!--Widget About End-->
@@ -102,19 +102,16 @@
                                 <!--Socail Links start-->
                                 <ul class="tnit-social-links tnit-social-links_v2">
                                     <li>
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a target="_blank" href="https://www.facebook.com/Kashivishwanath-Pipes-Pvt-Ltd-106708927966089"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a target="_blank" href="https://twitter.com/Kashiviofficial"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a target="_blank" href="https://www.instagram.com/kashivishwanathpipe/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                        <a target="_blank" href="https://in.pinterest.com/pin/653514595925032366/"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                                     </li>
                                 </ul><!--Socail Links End-->
                             </div>

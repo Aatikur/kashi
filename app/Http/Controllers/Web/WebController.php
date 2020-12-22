@@ -11,6 +11,6 @@ class WebController extends Controller
     public function category(){
         $category = Category::get();
         $subcategory = SubCategory::get();
-        return view('web.catagory',compact('category','subcategory'));
+        return view('web.product.catagory',compact('category','subcategory'));
     }
 }
