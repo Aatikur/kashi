@@ -33,22 +33,22 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>HDPE and MDPE Pipes</td>
-                                        <td>
+                                        <td class="cat">HDPE and MDPE Pipes</td>
+                                        <td class="cat">
                                             HDPE Drinking Water Pipes
                                         </td>
                                         <td><a href="{{route('web.product.product')}}">Drinking Water Pipes</a></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                             HDPE PLB Duct Pipe
                                         </td>
                                         <td><a href="{{route('web.product.product')}}">Duct Pipe</a></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                             HDPE Drinking Water Fitting
                                         </td>
                                         <td>                                            
@@ -61,15 +61,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                             MDPE Pipes
                                         </td>
                                         <td><a href="{{route('web.product.product')}}">Pipes</a></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                         	MDPE Fittings
                                         </td>
                                         <td>
@@ -81,15 +81,15 @@
                                     </tr>
                                     <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
                                     <tr>
-                                        <td>Agricultural Pipes and Fittings</td>
-                                        <td>
+                                        <td class="cat">Agricultural Pipes and Fittings</td>
+                                        <td class="cat">
                                             UPVC Cashing Pipe
                                         </td>
                                         <td><a href="{{route('web.product.product')}}">Cashing Pipe</a></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                             UPVC Cashing Pipe Fittings
                                         </td>
                                         <td>                                            
@@ -101,8 +101,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>
+                                        <td class="cat"></td>
+                                        <td class="cat">
                                             Column Pipes
                                         </td>
                                         <td><a href="{{route('web.product.product')}}">Column Pipe</a></td>
