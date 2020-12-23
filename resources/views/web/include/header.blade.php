@@ -47,15 +47,15 @@
                                 <!--Top Left Box Start-->
                                 <ul class="tp-left-listed">
                                     <li>
-                                        <a href="tel:+00 123 456 789"><i class="fa fa-phone" aria-hidden="true"></i> +00 123 456 789</a>
+                                        <a href="tel:+91 80489 24086"><i class="fa fa-phone" aria-hidden="true"></i> +91 80489 24086</a>
+                                        <a href="tel:+91 74850 67263">&nbsp;/&nbsp; +91 74850 67263</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:demo@mail.com"><i class="fa fa-envelope" aria-hidden="true"></i>demo@mail.com</a>
+                                        <a href="mailto:kashivishwanathpipe@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>kashivishwanathpipe@gmail.com</a>
                                     </li>
                                 </ul> <!--Top Left Box End-->
                                 <!--Top Right Start-->
                                 <div class="tp-right">
-                                   <a href="#" class="btn-account" data-toggle="modal" data-target="#tnit-modal">My Account</a>
                                     <!--Socail Links start-->
                                     <ul class="tnit-social-links">
                                         <li><a target="_blank" href="https://www.facebook.com/Kashivishwanath-Pipes-Pvt-Ltd-106708927966089"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

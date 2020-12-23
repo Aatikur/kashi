@@ -87,27 +87,17 @@
                 <section class="tnit-about-section">
                     <div class="container tnit-container-after">
                         <div class="row">
-                            <div class="col-md-4 col-sm-5">
+                            <div class="col-md-6 col-sm-5">
                                 <!--About Thumb Start-->
                                 <figure class="tnit-about-video">
-                                    <img src="web/images/about-video-img2.png" alt="">
-                                    <figcaption class="tnit-caption">
-                                        <a href="https://www.youtube.com/watch?v=_T_WnP9M1yw" class="btn-play">
-                                            <!-- <i class="fa fa-play-circle-o" aria-hidden="true"></i> -->
-                                            <span class="icon-play-button icomoon"></span>
-                                        </a>
-                                        <div id="tnit-videoPlayer-outer">
-                                            <div class="tnit-videoplay-inner"></div>
-                                        </div>
-                                    </figcaption>
+                                    <img src="{{asset('web/images/home-about.jpg')}}" alt="">
                                 </figure><!--About Thumb End-->
                             </div>
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-6 col-sm-7">
                                 <!--About Text Start-->
                                 <div class="tnit-about-text">
-                                    <h2>before you proceed <br> know who am i ?</h2>
-                                    <p><strong>“ Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy. ”</strong>  Vivamus ac purus pharetra, laoreet libero eu, pellentesque purus. Nam lobortis odio vitae ex egestas, et volutpat justo ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque ante nisi, elementum vel rutrum eu, accumsan vitae orci.</p>
-                                    <a href="about.html" class="tnit-btn-readmore">Read More</a>
+                                    <img src="http://localhost/kashi/public/web/images/logo.png" style="width: 80%;margin-bottom: 30px;">
+                                    <p>Established in 2017, Kashi Vishwanath Pipes Private Limited has made a well-recognized name as a Manufacturer and Wholesaler of PVC Pipes, CPVC Pipe, UPVC Pipes, MDPE Pipe, HDPE Pipes, Arsenic Removal Plant, Brass Bib Tap and many more. Our claim to success is hallmarked by the offered quality products that gained us huge recognizance. We are working towards development through a determined team of people to meet the most stringent requirements of customers and become leaders of tomorrow.</p>
                                 </div><!--About Text End-->
                             </div>
                         </div>
@@ -122,25 +112,25 @@
                     </div>
                     <div class="container">           
                         <div class="row">
-                            <div class="col-md-5 no-padding">
+                            <div class="col-md-5 col-xs-12 no-padding">
                                 <div class="catagory-block text-center">
                                    <div class="img-block"> <img src="web/images/catagories/1.jpg" alt=""></div>
                                     <h4>HDPE and MDPE Pipes</h4>
                                 </div>
                             </div>
-                            <div class="col-md-7 no-padding">
+                            <div class="col-md-7 col-xs-12 no-padding">
                                 <div class="catagory-block text-center">
                                    <div class="img-block"> <img src="web/images/catagories/2.jpg" alt=""></div>
                                     <h4>Agricultural Pipes and Fittings</h4> 
                                 </div>                              
                             </div>
-                            <div class="col-md-7 no-padding">
+                            <div class="col-md-7 col-xs-12 no-padding">
                                 <div class="catagory-block text-center">
                                     <div class="img-block"><img src="web/images/catagories/3.jpg" alt=""></div>
                                     <h4>Plumbing and Sanitation Pipes and Fittings</h4> 
                                 </div>                              
                             </div>
-                            <div class="col-md-5 no-padding">
+                            <div class="col-md-5 col-xs-12 no-padding">
                                 <div class="catagory-block text-center">
                                    <div class="img-block"> <img src="web/images/catagories/4.jpg" alt=""></div>
                                     <h4>Garden Pipe</h4>  
@@ -170,41 +160,6 @@
                         </div><!--Owl Item End-->
                     </div><!--Blog Slider End-->
                 </section><!--Blog Section End-->
-
-                <!--Facts Section Start-->
-                <section class="tnit-facts-section">
-                    <div class="container">
-                        <!--Facts Inner Outer Start-->
-                        <div class="facts-inner-outer">
-                            <ul class="tnit-facts-listed">
-                                <li class="facts-item">
-                                    <div class="tnit-text">
-                                        <strong class="tnit-counter">72</strong><strong class="tnit-end">+</strong> <br>
-                                        <span>Catagory</span>
-                                    </div>
-                                </li>
-                                <li class="facts-item">
-                                    <div class="tnit-text">
-                                        <strong class="tnit-counter">1,200</strong><strong class="tnit-end">+</strong> <br>
-                                        <span>Motivated clients </span>
-                                    </div>
-                                </li>
-                                <li class="facts-item">
-                                    <div class="tnit-text">
-                                        <strong class="tnit-counter">114</strong><strong class="tnit-end">+</strong> <br>
-                                        <span>Products</span>
-                                    </div>
-                                </li>
-                                <li class="facts-item">
-                                    <div class="tnit-text">
-                                        <strong class="tnit-counter">26</strong><strong class="tnit-end">+</strong> <br>
-                                        <span>written books</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div><!--Facts Inner Outer End-->
-                    </div>
-                </section><!--Facts Section End-->
                 
             </div><!--Main Content End-->
 

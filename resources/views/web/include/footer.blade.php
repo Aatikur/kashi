@@ -27,62 +27,45 @@
                                       </ul>
                                   </div><!--Widget About End-->
                               </div>
-                              <div class="col-md-2 col-sm-12 col-xs-12">
+                              <div class="col-md-2 col-sm-4 col-xs-6">
                                   <!--Widget Start-->
                                   <div class="widget">
                                       <h4>Services</h4>
                                       <!--Widget Listed Start-->
                                       <ul class="widget-listed">
-                                          <li><a href="#">Time Management</a></li>
-                                          <li><a href="#">Personal Development</a></li>
-                                          <li><a href="#">Leadership</a></li>
-                                          <li><a href="#">Business Training</a></li>
-                                          <li><a href="#">Public Speaking</a></li>
-                                          <li><a href="#">Sales Training</a></li>
+                                        <li><a href="{{ route('web.about.about') }}">About</a></li>
+                                        <li><a href="{{ route('web.category') }}">Product</a></li>
+                                        <li><a href="{{ route('web.blog.blog') }}">Blog</a></li>
+                                        <li><a href="{{ route('web.testimonial.testimonial') }}">Testimonial</a></li>
+                                        <li><a href="{{ route('web.career.career') }}">Career</a></li>
+                                        <li><a href="{{ route('web.contact.contact') }}">Contact</a></li>
                                       </ul><!--Widget Listed End-->
                                   </div><!--Widget End-->
                               </div>
-                              <div class="col-md-3 col-sm-12 col-xs-12">
+                              <div class="col-md-2 col-sm-4 col-xs-6">
                                   <!--Widget Start-->
                                   <div class="widget wiget-instagram">
-                                      <h4>instagram</h4>
+                                      {{-- <h4>Certificate</h4> --}}
                                       <ul class="intagram-listed">
                                           <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-01.jpg')}}" alt=""></a>
-                                          </li>
-                                          <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-02.jpg')}}" alt=""></a>
-                                          </li>
-                                          <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-03.jpg')}}" alt=""></a>
-                                          </li>
-                                          <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-04.jpg')}}" alt=""></a>
-                                          </li>
-                                          <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-05.jpg')}}" alt=""></a>
-                                          </li>
-                                          <li>
-                                              <a href="#"><img src="{{ asset('web/images/instagram-img-06.jpg')}}" alt=""></a>
+                                              <a href="#"><img src="{{ asset('web/images/certificate/1.jpg')}}" alt=""></a>
                                           </li>
                                       </ul>
                                   </div><!--Widget End-->
-                              </div>
-                              <div class="col-md-3 col-sm-12 col-xs-12">
+                              </div>                            
+                              <div class="col-md-1 col-sm-1 col-xs-1"></div>
+                              <div class="col-md-3 col-sm-4 col-xs-12">
                                   <!--Widget Start-->
                                   <div class="widget widget-appointment">
-                                      <h4>GET APPOINTMENT</h4>
-                                      <form method="get" class="tnit-appointment-form">
-                                          <div class="inner-holder">
-                                              <input type="text" placeholder="Name">
-                                          </div>
-                                          <div class="inner-holder">
-                                              <input type="tel" placeholder="Phone">
-                                          </div>
-                                          <div class="inner-holder">
-                                              <button class="btn-submit" type="submit">MAKE APPOINTMENT</button>
-                                          </div>
-                                      </form>
+                                        <h4>Get in Touch</h4>
+                                        <a href="tel:+91 80489 24086" class="ft-call d-flex">                                            
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <p>call Us</p>
+                                        </a>
+                                        <a href="mailto:kashivishwanathpipe@gmail.com" class="ft-mail d-flex">                                            
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <p>Write to us</p>
+                                        </a>
                                   </div><!--Widget End-->
                               </div>
                           </div>
@@ -96,7 +79,7 @@
                                 
                             </div>
                             <div class="col-md-5 col-sm-6 col-xs-12">
-                                <p>Copyright © 2017 <span class="th-color">KASHI VISHWANATH</span>, Design by <a href="https://www.webinfotech.net.in/">webinfotech</a>.</p>
+                                <p>Copyright © 2020 <span class="th-color">KASHI VISHWANATH</span>, Design by <a href="https://www.webinfotech.net.in/">webinfotech</a>.</p>
                             </div>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <!--Socail Links start-->

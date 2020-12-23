@@ -23,7 +23,7 @@
                     </div>
                     <div class="container">
                         <div class="row career">
-                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
                                 <!--Sidebar Outer Start-->
                                 <aside class="tnit-sidebar-outer">
                                     <!--Widget Start-->
@@ -81,7 +81,7 @@
                                     </div><!--Widget End-->
                                 </aside><!--Sidebar Outer End-->
                             </div>
-                            <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
 
                                 <!--Event Listed Start-->
                                 @foreach($career as $data)
