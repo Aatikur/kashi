@@ -11,17 +11,6 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::post('logout', 'LoginController@logout')->name('admin.logout');
         Route::get('/change/password/form', 'LoginController@changePasswordForm')->name('admin.change_password_form');
         Route::post('/change/password', 'LoginController@changePassword')->name('admin.change_password');
-        // Package
-        // Route::group(['namespace' => 'Package'], function () {
-        //     Route::get('/packages', 'PackageController@index')->name('admin.package');
-        //     Route::post('/store/package', 'PackageController@store')->name('admin.store_package');
-        //     Route::get('/show', 'PackageController@show')->name('admin.package_list');
-        //     Route::get('/show/data', 'PackageController@showPackage')->name('admin.ajax.show_package');
-        //     Route::get('/single/package/{id}', 'PackageController@view')->name('admin.view');
-        //     Route::get('/edit/package/{id}', 'PackageController@edit')->name('admin.edit');
-        //     Route::post('/update/package', 'PackageController@update')->name('admin.update_package');
-        //     Route::get('/package/status/{id}/{status}', 'PackageController@status')->name('admin.status');
-        // });
         
         // Product
         Route::group(['namespace' => 'Product'], function () {

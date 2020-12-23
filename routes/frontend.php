@@ -17,7 +17,7 @@ Route::get('/product', function () {
 
 Route::group(['namespace' => 'Web'], function () {
     Route::get('/category','WebController@category')->name('web.category');
-    
+    Route::get('/Career','WebController@career')->name('web.career.career');
 });
 
 Route::get('/Blog', function () {
@@ -35,9 +35,9 @@ Route::get('/Testimonial', function () {
 })->name('web.testimonial.testimonial');
 
 
-Route::get('/Career', function () {
-    return view('web.career.career');
-})->name('web.career.career');
+// Route::get('/Career', function () {
+//     return view('web.career.career');
+// })->name('web.career.career');
 
 
 Route::get('/Contact', function () {

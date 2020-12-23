@@ -84,48 +84,36 @@
                             <div class="col-md-8 col-sm-12 col-xs-12">
 
                                 <!--Event Listed Start-->
-                                <ul class="tnit-even-listed">
-                                    <!--Even Item Start-->
-                                    <li class="tnit-event-item">
-                                        <div class="row">
-                                            <div class="col-md-2 col-sm-2 col-xs-12">
-                                                <div class="date-box">
-                                                    <span>27</span>
-                                                    Jun
+                                @foreach($career as $data)
+                                    <ul class="tnit-even-listed">
+                                        <!--Even Item Start-->
+                                        <li class="tnit-event-item">
+                                            <div class="row">
+                                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                                    <div class="date-box">
+                                                        <span>27</span>
+                                                        Jun
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-10 col-sm-10 col-xs-12">
-                                                <div class="tnit-text">
-                                                    <h4 style="font-weight: 700">HR MANAGER</h4>
-                                                    <div class="career-sub-text">
-                                                        <h5>Roles & Responsibility</h5>
-                                                        <ul>
-                                                            <li>Develop and implement HR strategies and initiatives aligned with the overall business strategy.</li>
-                                                            <li>Bridge management and employee relations by addressing demands, grievances or other issues.</li>
-                                                            <li> Manage the recruitment and selection process.</li>
-                                                            <li>Support current and future business needs through the development, engagement, motivation and preservation of human capital.</li>     
-                                                        </ul>
-                                                    </div>
-                                                    <div class="career-sub-text">
-                                                        <h5>Education</h5>
-                                                        <ul>
-                                                            <li>BBA or equivalent with management as oneof subject </li> 
-                                                        </ul>
-                                                    </div>
-                                                    <div class="career-sub-text">
-                                                        <h5>Work Experience</h5>
-                                                        <ul>
-                                                            <li>Minimum 1 year work experience</li> 
-                                                        </ul>
+                                                <div class="col-md-10 col-sm-10 col-xs-12">
+                                                    <div class="tnit-text">
+                                                        <h4 style="font-weight: 700">{{ $data->designation }}</h4>
+                                                        <div class="career-sub-text">
+                                                            <h5>Roles & Responsibility</h5>
+                                                            <ul>
+                                                               {!! $data->role !!}
+                                                            </ul>
+                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li><!--Even Item End-->
-                                </ul><!--Event Listed End-->
+                                        </li><!--Even Item End-->
+                                    </ul><!--Event Listed End-->
+                                @endforeach
 
                                 <!--Event Listed Start-->
-                                <ul class="tnit-even-listed">
+                                {{-- <ul class="tnit-even-listed">
                                     <!--Even Item Start-->
                                     <li class="tnit-event-item">
                                         <div class="row">
@@ -180,7 +168,7 @@
                                         </li>
                                         </ul>
                                     </nav>
-                                </div><!--Pagination Row End-->
+                                </div><!--Pagination Row End--> --}}
 
                             </div>
                         </div>
