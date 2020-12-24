@@ -27,56 +27,26 @@
                                 <!--Event Listed Start-->
                                 <ul class="tnit-even-listed">
                                     <!--Even Item Start-->
-                                    <li class="tnit-event-item">
-                                        <div class="row">
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="tnit-text">
-                                                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
-                                                    <span><i class="fa fa-map-signs" aria-hidden="true"></i> Alok Industry, New Delhi</span>
+                                    @foreach($testimonial as  $value)
+                                        <li class="tnit-event-item">
+                                            <div class="row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <div class="tnit-text">
+                                                       {!! $value->desc !!}
+                                                        <span><i class="fa fa-map-signs" aria-hidden="true"></i> {{ $value->name }}, {{ $value->address }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li><!--Even Item End-->
-                                    <!--Even Item Start-->
-                                    <li class="tnit-event-item">
-                                        <div class="row">
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="tnit-text">
-                                                    <h4>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h4>
-                                                    <span><i class="fa fa-map-signs" aria-hidden="true"></i>Quantum heights, Gaziabad </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li><!--Even Item End-->
-                                    <!--Even Item Start-->
-                                    <li class="tnit-event-item">
-                                        <div class="row">
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="tnit-text">
-                                                    <h4>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-                                                    <span><i class="fa fa-map-signs" aria-hidden="true"></i> Pankaj Sharma, Chandni Chok</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li><!--Even Item End-->
+                                        </li><!--Even Item End-->
+                                    @endforeach
+                                    
+                                  
                                 </ul><!--Event Listed End-->
 
                                 <!--Pagination Row Start-->
                                 <div class="tnit-pagination-row pd-t70">
                                     <nav aria-label="navigation">
-                                    <ul class="pagination">
-                                        <li class="page-item active"><a class="page-link" href="#">
-                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                        </a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </a>
-                                        </li>
-                                    </ul>
+                                        {{ $testimonial->onEachSide(3)->links() }}
                                     </nav>
                                 </div><!--Pagination Row End-->
 

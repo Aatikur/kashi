@@ -25,22 +25,21 @@
                                     <!--Product Item Start-->
                                     <div class="tnit-product-item tnit-product-detail-item">
                                         <figure class="tnit-thumb">
-                                            <img src="web/images/product-img-md-01.jpg" alt="">
+                                            <img src="{{ asset('images/products/'.$product->image)}}" alt="">
                                         </figure>
                                         <div class="tnit-text-outer">
-                                            <h3><a href="product-detail.html">Drinking Water Pipes</a></h3>
-                                            <span class="small">HDPE and MDPE Pipes</span>
+                                            <h3><a href="product-detail.html">{{ $product->name }}</a></h3>
+                                            <span class="small">{{ $product->category->name }}</span>
                                             <div class="bottom-text">
                                                 <div class="left">
-                                                    <span>HDPE Drinking Water Pipes</span>
+                                                    <span>{{ $product->subcategory->name }}</span>
                                                 </div>
                                                 <div class="right">
-                                                    <em>$33.00</em>
-                                                    <span class="free">$28.00</span>
+                                                    <em>₹{{ $product->mrp}}</em>
+                                                    <span class="free">₹{{ $product->price}}</span>
                                                 </div>
                                             </div>
-                                            <p style="margin-bottom:0">Quisque venenatis nisl nec venenatis malesuada. Proin eleifend magna ac ullamcorper auctor. Duis consequat libero eget nunc faucibus, nec iaculis odio cursus. Aliquam erat volutpat. Mauris dictum, orci sit amet faucibus molestie, libero mauris iaculis magna, sit amet tempus ligula felis eu ipsum. Curabitur elementum, nulla a rhoncus ullamcorper, erat felis faucibus elit, non dignissim nunc purus nec justo.</p>
-                                            <a href="">view specification</a>
+                                            <p style="margin-bottom:0">{!! $product->short_desc !!}</a>
                                             <div class="bottom-holder2" style="margin-top:20px">
                                                 <button class="pro-btn-cart" data-toggle="modal" data-target="#tnit-modal"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Ask for Quote</button>
                                                 <!--Popup Overlay Outer Start-->
@@ -60,22 +59,24 @@
                                                                 <div class="modal-body">
                                                                     <!--Modal Form Start-->
                                                                     <p>Provide us your contact detail and our sales team will get in touch with you within 24 hrs</p>
-                                                                    <form method="get" class="tnit-modal-form">
+                                                                    <form method="post" class="tnit-modal-form" action="{{ route('web.inquiry',['id'=>$product->id]) }}">
+                                                                        @csrf
+                                                                        @method('put')
                                                                         <div class="inner-holder">
                                                                             <label>Name</label>
-                                                                            <input type="text">
+                                                                            <input type="text" name="name" style="color:#333">
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="inner-holder">
                                                                                     <label>Phone</label>
-                                                                                    <input type="text">
+                                                                                    <input type="text" name="phone" style="color:#333">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="inner-holder">
-                                                                                    <label>City/Village</label>
-                                                                                    <input type="password">
+                                                                                    <label>Location</label>
+                                                                                    <input type="text" name="city" style="color:#333">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -106,143 +107,48 @@
                                             <div role="tabpanel" class="tab-pane active" id="tl-tab-list1">
                                                 <!--Leave Review Outer Start-->
                                                 <div class="tl-review-outer">
-                                                   <p>Sed sollicitudin purus sed purus laoreet scelerisque et vitae purus. Donec sapien metus, posuere mattis augue at, convallis sollicitudin augue. Aenean imperdiet purus non nisl vestibulum, quis ullamcorper urna molestie. In ipsum nisl, pulvinar a ornare non, aliquam sed felis. Aliquam luctus vulputate erat in fermentum. </p>
+                                                   <p>{!! $product->long_desc !!}</p>
                                                 </div><!--Leave Review Outer End-->
                                             </div>
                                         </div><!-- Tab Content End -->
                                     </div><!--Tabs Outer End-->
                                     <!--Heading Outer start-->
-                                    <div class="tnit-heading-outer">
-                                        <h3>Related Products</h3>
-                                    </div><!--Heading Outer End-->
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-6 col-xs-12">
-                                            <!--Video Item Start-->
-                                            <div class="tnit-product-item">
-                                                <figure class="tnit-thumb">
-                                                    <img src="web/images/product-img-md-01.jpg" alt="">
-                                                    <figcaption class="tnit-caption">
-                                                        <span class="btn-sale">Sale!</span>
-                                                    </figcaption>
-                                                </figure>
-                                                <div class="tnit-text-outer">
-                                                    <span class="small">Motivational</span>
-                                                    <h4><a href="product-detail.html">Who Moved My Cheese</a></h4>
-                                                    <div class="bottom-text">
-                                                        <div class="left">
-                                                            <span>(0 reviews)</span>
-                                                            <span class="tnit-rating">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </span>
+                                    @if(isset($related_products) && !empty($related_products) && count($related_products)>0)
+                                        <div class="tnit-heading-outer">
+                                            <h3>Related Products</h3>
+                                        </div><!--Heading Outer End-->
+                                        @foreach($related_products as $values)
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                                    <!--Video Item Start-->
+                                                    <div class="tnit-product-item">
+                                                        <figure class="tnit-thumb">
+                                                            <img src="{{ asset('images/products/'.$values->image)}}" alt="">
+                                                            <figcaption class="tnit-caption">
+                                                                <span class="btn-sale">Sale!</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="tnit-text-outer">
+                                                            <span class="small">{{ $values->category->name }}</span>
+                                                            <h4><a href="{{ route('web.product.product',['id'=>$values->id]) }}">{{ $values->name }}</a></h4>
+                                                            <div class="bottom-text">
+                                                                <div class="left">
+                                                                   
+                                                                    
+                                                                </div>
+                                                                <div class="right">
+                                                                    <em>{{ $values->mrp }}</em>
+                                                                    <span class="free">{{ $values->price }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('web.product.product',['id'=>$values->id]) }}" style="font-size: 14px;font-weight: 600;padding: 0;border: none;display: block;color: #fd0002;text-align: center;" ><i class="fa fa-eye" aria-hidden="true"></i> View Product</a>
                                                         </div>
-                                                        <div class="right">
-                                                            <em>$33.00</em>
-                                                            <span class="free">$28.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="pro-btn-cart" type="submit"><i class="fa fa-eye" aria-hidden="true"></i> View Product</button>
+                                                    </div><!--Video Item End-->
                                                 </div>
-                                            </div><!--Video Item End-->
-                                        </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-12">
-                                            <!--Video Item Start-->
-                                            <div class="tnit-product-item">
-                                                <figure class="tnit-thumb">
-                                                    <img src="web/images/product-img-md-01.jpg" alt="">
-                                                   
-                                                </figure>
-                                                <div class="tnit-text-outer">
-                                                    <span class="small">leadership</span>
-                                                    <h4><a href="product-detail.html">Last Lecture by Michel</a></h4>
-                                                    <div class="bottom-text">
-                                                        <div class="left">
-                                                            <span>(2 reviews)</span>
-                                                            <span class="tnit-rating">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                        <div class="right">
-                                                            <em class="empty">$33.00</em>
-                                                            <span class="free">$12.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="pro-btn-cart" type="submit"><i class="fa fa-eye" aria-hidden="true"></i> View Product</button>
-                                                </div>
-                                            </div><!--Video Item End-->
-                                        </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-12">
-                                            <!--Video Item Start-->
-                                            <div class="tnit-product-item">
-                                                <figure class="tnit-thumb">
-                                                    <img src="web/images/product-img-md-01.jpg" alt="">
-                                                    <figcaption class="tnit-caption">
-                                                        <span class="btn-sale">Sale!</span>
-                                                    </figcaption>
-                                                </figure>
-                                                <div class="tnit-text-outer">
-                                                    <span class="small">personal</span>
-                                                    <h4><a href="product-detail.html">Thinking Fast and Slow</a></h4>
-                                                    <div class="bottom-text">
-                                                        <div class="left">
-                                                            <span>(4 reviews)</span>
-                                                            <span class="tnit-rating">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                        <div class="right">
-                                                            <em class="empty">$33.00</em>
-                                                            <span class="free">$70.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="pro-btn-cart" type="submit"><i class="fa fa-eye" aria-hidden="true"></i> View Product</button>
-                                                </div>
-                                            </div><!--Video Item End-->
-                                        </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-12">
-                                            <!--Video Item Start-->
-                                            <div class="tnit-product-item">
-                                                <figure class="tnit-thumb">
-                                                    <img src="web/images/product-img-md-01.jpg" alt="">
-                                                    <figcaption class="tnit-caption">
-                                                        <span class="btn-sale">Sale!</span>
-                                                    </figcaption>
-                                                </figure>
-                                                <div class="tnit-text-outer">
-                                                    <span class="small">Motivational</span>
-                                                    <h4><a href="product-detail.html">Who Moved My Cheese</a></h4>
-                                                    <div class="bottom-text">
-                                                        <div class="left">
-                                                            <span>(0 reviews)</span>
-                                                            <span class="tnit-rating">
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                        <div class="right">
-                                                            <em>$33.00</em>
-                                                            <span class="free">$28.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="pro-btn-cart" type="submit"><i class="fa fa-eye" aria-hidden="true"></i> View Product</button>
-                                                </div>
-                                            </div><!--Video Item End-->
-                                        </div>
-                                    </div>
+                                                
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div><!--Inner Video Outer End--> 
                             </div>
                         </div>

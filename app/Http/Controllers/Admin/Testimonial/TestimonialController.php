@@ -18,7 +18,7 @@ class TestimonialController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'desc' => 'required'
         ]);
             
@@ -39,7 +39,7 @@ class TestimonialController extends Controller
         $testimonial = new Testimonial;
         $testimonial->name = $request->input('name');
         $testimonial->address = $request->input('address');
-        $testimonial->image = $image_name;
+        // $testimonial->image = $image_name;
         $testimonial->desc = $request->input('desc');
 
         if($testimonial->save()){
@@ -54,13 +54,13 @@ class TestimonialController extends Controller
     }
 
     public function show(){
-        $query = Testimonial::orderBy('created_at', 'DESC');
+        $query = Testimonial::latest();
         return datatables()->of($query->get())
         ->addIndexColumn()
-        ->addColumn('image', function($row){
-            $image = '<img src="'.asset('admin/post/thumb/'.$row->image).'" height="200" />';
-            return $image;
-        })
+        // ->addColumn('image', function($row){
+        //     $image = '<img src="'.asset('admin/post/thumb/'.$row->image).'" height="200" />';
+        //     return $image;
+        // })
         ->addColumn('desc', function($row){
             $desc = htmlspecialchars_decode($row->desc);
             return $desc;
@@ -100,60 +100,60 @@ class TestimonialController extends Controller
             'desc' => 'required'
         ]);
         $id = $request->input('id');
-        if($request->hasfile('image'))
-        {
-            $this->validate($request, [
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            $image = $request->file('image');
-            $destination = base_path().'/public/admin/post/';
-            $image_extension = $image->getClientOriginalExtension();
-            $image_name = md5(date('now').time()).".".$image_extension;
-            $original_path = $destination.$image_name;
-            Image::make($image)->save($original_path);
-            $thumb_path = base_path().'/public/admin/post/thumb/'.$image_name;
-            Image::make($image)
-            ->resize(300, 400)
-            ->save($thumb_path);
+        // if($request->hasfile('image'))
+        // {
+        //     $this->validate($request, [
+        //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     ]);
+        //     $image = $request->file('image');
+        //     $destination = base_path().'/public/admin/post/';
+        //     $image_extension = $image->getClientOriginalExtension();
+        //     $image_name = md5(date('now').time()).".".$image_extension;
+        //     $original_path = $destination.$image_name;
+        //     Image::make($image)->save($original_path);
+        //     $thumb_path = base_path().'/public/admin/post/thumb/'.$image_name;
+        //     Image::make($image)
+        //     ->resize(300, 400)
+        //     ->save($thumb_path);
 
-            // Check wheather image is in DB
-            $checkImage = Testimonial::find($id);
-            if($checkImage->image){
-                //Delete
-                $image_path = "admin/post/thumb/".$checkImage->image;  
-                if(File::exists($image_path)) {
-                    File::delete($image_path);
-                }
+        //     // Check wheather image is in DB
+        //     $checkImage = Testimonial::find($id);
+        //     if($checkImage->image){
+        //         //Delete
+        //         $image_path = "admin/post/thumb/".$checkImage->image;  
+        //         if(File::exists($image_path)) {
+        //             File::delete($image_path);
+        //         }
 
-                //Update
-                $image_update = DB::table('testimonials')
-                ->where('id', $id)
-                ->update([
-                    'image' => $image_name,
-                    'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()
-                ]);   
+        //         //Update
+        //         $image_update = DB::table('testimonials')
+        //         ->where('id', $id)
+        //         ->update([
+        //             'image' => $image_name,
+        //             'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()
+        //         ]);   
 
-                if($image_update){
-                    return redirect()->back()->with('message','Testimonial Updated Successfully!');
-                }else{
-                    return redirect()->back()->with('error','Something Went Wrong Please Try Again');
-                } 
-            }else{
-                //Update
-                $image_update = DB::table('testimonials')
-                ->where('id', $id)
-                ->update([
-                    'image' => $image_name,
-                    'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()
-                ]);   
+        //         if($image_update){
+        //             return redirect()->back()->with('message','Testimonial Updated Successfully!');
+        //         }else{
+        //             return redirect()->back()->with('error','Something Went Wrong Please Try Again');
+        //         } 
+        //     }else{
+        //         //Update
+        //         $image_update = DB::table('testimonials')
+        //         ->where('id', $id)
+        //         ->update([
+        //             'image' => $image_name,
+        //             'updated_at' => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()
+        //         ]);   
                 
-                if($image_update){
-                    return redirect()->back()->with('message','Testimonial Updated Successfully!');
-                }else{
-                    return redirect()->back()->with('error','Something Went Wrong Please Try Again');
-                } 
-            }
-        }
+        //         if($image_update){
+        //             return redirect()->back()->with('message','Testimonial Updated Successfully!');
+        //         }else{
+        //             return redirect()->back()->with('error','Something Went Wrong Please Try Again');
+        //         } 
+        //     }
+        // }
 
         $testimonial = Testimonial::find($id);
         $testimonial->name = $request->input('name');
@@ -176,13 +176,13 @@ class TestimonialController extends Controller
         $testimonial = Testimonial::find($id);
 
         if($testimonial->delete()){
-            if(File::exists(public_path().'admin/post/'.$testimonial->image)){
-                File::delete(public_path().'admin/post/'.$testimonial->image);
-            }
+            // if(File::exists(public_path().'admin/post/'.$testimonial->image)){
+            //     File::delete(public_path().'admin/post/'.$testimonial->image);
+            // }
             
-            if(File::exists(public_path().'admin/post/thumb/'.$testimonial->image)){
-                File::delete(public_path().'admin/post/thumb/'.$testimonial->image);
-            }
+            // if(File::exists(public_path().'admin/post/thumb/'.$testimonial->image)){
+            //     File::delete(public_path().'admin/post/thumb/'.$testimonial->image);
+            // }
             
             return redirect()->back()->with('message', 'Testimonial Deleted Successfully!');
         }else {

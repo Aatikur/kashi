@@ -43,7 +43,7 @@
             serverSide: true,
             ajax: "{{ route('admin.ajax.show_contact') }}",
             columns: [
-                {data: 'id', name: 'id',searchable: true},
+                {data: 'DT_RowIndex', name: 'DT_RowIndex',searchable: true},
                 {data: 'full_name', name: 'full_name',searchable: true},      
                 {data: 'email', name: 'email',searchable: true},      
                 {data: 'contact_no', name: 'contact_no',searchable: true},         

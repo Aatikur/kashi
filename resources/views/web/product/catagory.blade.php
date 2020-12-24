@@ -37,14 +37,23 @@
                                         <td class="cat">
                                             HDPE Drinking Water Pipes
                                         </td>
-                                        <td><a href="{{route('web.product.product')}}">Drinking Water Pipes</a></td>
+                                        <td>
+                                                @foreach($hpde_dr_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}"style="display: block;">{{  $value->name}}</a>
+                                               
+                                                @endforeach
+                                            </td>
                                     </tr>
                                     <tr>
                                         <td class="cat"></td>
                                         <td class="cat">
                                             HDPE PLB Duct Pipe
                                         </td>
-                                        <td><a href="{{route('web.product.product')}}">Duct Pipe</a></td>
+                                        <td> 
+                                            @foreach($hpde_plb_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="cat"></td>
@@ -52,12 +61,9 @@
                                             HDPE Drinking Water Fitting
                                         </td>
                                         <td>                                            
-                                            <a href="{{route('web.product.product')}}">Elbow</a> <br>
-                                            <a href="{{route('web.product.product')}}">Tee</a> <br>
-                                            <a href="{{route('web.product.product')}}">Reducer</a> <br>
-                                            <a href="{{route('web.product.product')}}">Saddle or D Joint</a> <br>
-                                            <a href="{{route('web.product.product')}}">End Cap </a><br>
-                                            <a href="{{route('web.product.product')}}">Slipon Flanges</a>
+                                            @foreach($hdpe_ft_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
                                         </td>
                                     </tr>
                                     <tr>
@@ -65,7 +71,11 @@
                                         <td class="cat">
                                             MDPE Pipes
                                         </td>
-                                        <td><a href="{{route('web.product.product')}}">Pipes</a></td>
+                                        <td> 
+                                            @foreach($hdpe_mdp_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="cat"></td>
@@ -73,10 +83,9 @@
                                         	MDPE Fittings
                                         </td>
                                         <td>
-                                            <a href="{{route('web.product.product')}}">Elbow</a> <br>
-                                            <a href="{{route('web.product.product')}}">Tee</a> <br>
-                                            <a href="{{route('web.product.product')}}">Reducer</a> <br>
-                                            <a href="{{route('web.product.product')}}">Coupler</a>
+                                            @foreach($hdpe_cl_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
                                         </td>
                                     </tr>
                                     <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
@@ -85,7 +94,11 @@
                                         <td class="cat">
                                             UPVC Cashing Pipe
                                         </td>
-                                        <td><a href="{{route('web.product.product')}}">Cashing Pipe</a></td>
+                                        <td>
+                                            @foreach($agri_upvc_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="cat"></td>
@@ -93,11 +106,9 @@
                                             UPVC Cashing Pipe Fittings
                                         </td>
                                         <td>                                            
-                                            <a href="{{route('web.product.product')}}">UPVC Cashing Reducer</a> <br>
-                                            <a href="{{route('web.product.product')}}">UPVC Cashing Elbow</a> <br>
-                                            <a href="{{route('web.product.product')}}">UPVC Cashing Tee</a> <br>
-                                            <a href="{{route('web.product.product')}}">UPVC Cashing Coupler</a> <br>
-                                            <a href="{{route('web.product.product')}}">UPVC END Cap</a>
+                                            @foreach($agri_ft_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
                                         </td>
                                     </tr>
                                     <tr>
@@ -105,9 +116,94 @@
                                         <td class="cat">
                                             Column Pipes
                                         </td>
-                                        <td><a href="{{route('web.product.product')}}">Column Pipe</a></td>
+                                        <td>
+                                            @foreach($agri_col_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
                                     </tr>
                                     <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
+                                   
+                                    <tr>
+                                        <td class="cat">Plumbing and Sanitation Pipes and Fittings</td>
+                                        <td class="cat">
+                                            CPVC Pipes
+                                        </td>
+                                        <td>
+                                            @foreach($plum_cpvc_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cat"></td>
+                                        <td class="cat">
+                                            CPVC Pipe Fitting
+                                        </td>
+                                        <td>                                            
+                                            @foreach($plum_ft_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cat"></td>
+                                        <td class="cat">
+                                            UPVC Plumbing Pipe
+                                        </td>
+                                        <td>
+                                            @foreach($plum_pipe_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cat"></td>
+                                        <td class="cat">
+                                            UPVC Plumbing Pipe Fitting
+                                        </td>
+                                        <td>
+                                            @foreach($plum_pipe_ft_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cat"></td>
+                                        <td class="cat">
+                                            SWR Pipe
+                                        </td>
+                                        <td>
+                                            @foreach($plum_swr_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cat"></td>
+                                        <td class="cat">
+                                            SWR Pipe Fittings
+                                        </td>
+                                        <td>
+                                            @foreach($plum_swr_ft_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan=3 style="padding: 1px;background: #f52b2d;border-bottom: 0;"></td></tr>
+                                   
+                                    <tr>
+                                        <td class="cat">Garden Pipe</td>
+                                        <td class="cat">
+                                            Water Hose Pipe
+                                        </td>
+                                        <td>
+                                            @foreach($garden_hose_products as $value)
+                                                <a href="{{route('web.product.product',['id'=>$value->id])}}">{{  $value->name}}</a>
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

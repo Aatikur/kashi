@@ -19,7 +19,7 @@
           <form class="form-horizontal" method="POST" action="{{ route('admin.update_testimonial') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <input type="hidden" name="id" value="{{ $testimonial->id }}">
-            <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+            {{-- <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                 <label for="image" class="col-md-2 control-label">Image Upload</label>
                 <div class="col-md-10">
                     <input type="file" class="form-control" name="image" accept="/*">
@@ -32,7 +32,7 @@
                         <img src="{{ asset('admin/post/thumb/'.$testimonial->image) }}" alt="image" height="200" width="400">
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                 <label for="name" class="col-md-2 control-label">Name</label>
                 <div class="col-md-10">

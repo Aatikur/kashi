@@ -11,18 +11,22 @@ use App\Models\Order;
 use App\Models\Testimonial;
 use App\Models\Job;
 use App\Models\Blog;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\Product;
+use App\Models\ProductInquiry;
 
 class DashboardController extends Controller
 {
     public function dashboardView()
     {
-        $user = User::count();
-        $order = Order::count();
-        $testimonial = Testimonial::count();
-        $applicant = Job::count();
+        $category = Category::count();
+        $subcategory = SubCategory::count();
+        $products = Product::count();
         $blog = Blog::count();
-        $orders = Order::latest()->limit(10)->get();
-        return view('admin.dashboard', compact('user', 'order', 'testimonial', 'applicant', 'blog', 'orders'));
+        $inquiry = ProductInquiry::count();
+        $inquiry_data =ProductInquiry::latest()->limit(5)->get();
+        return view('admin.dashboard', compact('category','subcategory','products','blog','inquiry','inquiry_data'));
     }
 
     public function changePasswordForm()

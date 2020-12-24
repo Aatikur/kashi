@@ -6,7 +6,7 @@
     <div class="x_panel">
 
         <div class="x_title">
-            <h2>Product List</h2>
+            <h2>Product Inquiry List</h2>
             <div class="clearfix"></div>
         </div>
         @if (Session::has('message'))
@@ -16,20 +16,15 @@
             <div class="alert alert-danger">{{ Session::get('error') }}</div>
         @endif
         <div class="x_content">
-            <div style="text-align: right">
-                <a href="{{ route('admin.new_product_form') }}"  class="btn btn-success">Add Product</a>
-            </div>
             <table id="contact_list" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                    <th>Sl. No</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Sub Category</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>MRP</th>
-                    <th>Action</th>
+                        <th>SI</th>
+                        <th>Product Name</th>
+                        <th>Name</th>
+                        <th>City/Vill</th>
+                        <th>Phone</th>
+                        
                     </tr>
                 </thead>
                 <tbody>                       
@@ -46,16 +41,14 @@
         var table = $('#contact_list').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('admin.product_list_ajax') }}",
+            ajax: "{{ route('admin.inquiry_list_ajax') }}",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex',searchable: true},
+                {data: 'product_name', name: 'product_name',searchable: true},      
                 {data: 'name', name: 'name',searchable: true},      
-                {data: 'category', name: 'category',searchable: true},      
-                {data: 'sub_category', name: 'sub_category',searchable: true},         
-                {data: 'image', name: 'image',searchable: true},         
-                {data: 'price', name: 'price',searchable: true},      
-                {data: 'mrp', name: 'mrp',searchable: true},      
-                {data: 'action', name: 'action',searchable: true},      
+                {data: 'city', name: 'city',searchable: true},      
+                {data: 'phone', name: 'phone',searchable: true},         
+                
             ]
         });
     })

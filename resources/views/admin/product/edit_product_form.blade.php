@@ -59,7 +59,9 @@
                                 <div class="col-md-4 col-sm-12 col-xs-12 mb-3">
                                     <label for="sub_category">Select Sub Category <span><b style="color: red"> * </b></span></label>
                                     <select class="form-control" name="sub_category" id="sub_category" required>
-                                      <option value="">Select First Category</option>
+                                        @foreach($sub_category as $data)
+                                            <option value="{{ $data->id }}" {{ $data->id == $product_details->sub_cat_id?'selected':'' }}>{{ $data->name }}</option>
+                                        @endforeach
                                     </select>
                                     @if($errors->has('sub_category'))
                                         <span class="invalid-feedback" role="alert" style="color:red">

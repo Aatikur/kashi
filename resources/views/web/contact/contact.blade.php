@@ -23,6 +23,7 @@
                     </div>
                     <div class="container">
                         <div class="row">
+                           
                             <div class="col-md-4 col-sm-12 col-xs-12">
                                 <!--Sidebar Outer Start-->
                                 <aside class="tnit-sidebar-outer tnit-sidebar-outer_v2">
@@ -49,15 +50,27 @@
                             <div class="col-md-8 col-sm-12 col-xs-12">
                                 <!--Leave Review Outer Start-->
                                 <div class="tl-review-outer">
+                                    @if (Session::has('message'))
+                                        <div class="alert alert-success" >{{ Session::get('message') }}</div>
+                                    @endif
+                                    @if (Session::has('error'))
+                                        <div class="alert alert-danger" >{{ Session::get('error') }}</div>
+                                    @endif
                                     <h3>Leave A Message</h3>
                                     <!--Review Form Start-->
-                                    <form method="get" class="tl-review-form">
+                                    <form method="post" class="tl-review-form" action="{{ route('web.add_contact') }}">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <!--Inner Holder Start-->
                                                 <div class="inner-holder">
                                                     <label>Full Name <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                    <input type="text">
+                                                    <input type="text" name="name">
+                                                    @if($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong style="color:red;font-weight:500">{{ $errors->first('name') }}</strong>
+                                                        </span> 
+                                                    @enderror
                                                 </div><!--Inner Holder End-->
                                                 
                                             </div>
@@ -65,21 +78,36 @@
                                                 <!--Inner Holder Start-->
                                                 <div class="inner-holder">
                                                     <label>Email <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                    <input type="email">
+                                                    <input type="email" name="email">
+                                                    @if($errors->has('email'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong style="color:red;font-weight:500">{{ $errors->first('email') }}</strong>
+                                                        </span> 
+                                                    @enderror
                                                 </div><!--Inner Holder End-->
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <!--Inner Holder Start-->
                                                 <div class="inner-holder">
                                                     <label>Phone </label>
-                                                    <input type="tel">
+                                                    <input type="tel" name="phone">
+                                                    @if($errors->has('phone'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong style="color:red;font-weight:500">{{ $errors->first('phone') }}</strong>
+                                                        </span> 
+                                                    @enderror
                                                 </div><!--Inner Holder End-->
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <!--Inner Holder Start-->
                                                 <div class="inner-holder">
                                                     <label>Subject <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                    <input type="text">
+                                                    <input type="text" name="message" name="subject">
+                                                    @if($errors->has('subject'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong style="color:red;font-weight:500">{{ $errors->first('subject') }}</strong>
+                                                        </span> 
+                                                    @enderror
                                                 </div><!--Inner Holder End-->
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -87,6 +115,11 @@
                                                 <div class="inner-holder">
                                                     <label>Message </label>
                                                     <textarea name="message"></textarea>
+                                                    @if($errors->has('message'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong style="color:red;font-weight:500">{{ $errors->first('message') }}</strong>
+                                                        </span> 
+                                                    @enderror
                                                 </div><!--Inner Holder End-->
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">

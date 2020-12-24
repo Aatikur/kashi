@@ -23,51 +23,86 @@
                     </div>
                     <div class="container">
                         <div class="row career">
+                           
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <!--Sidebar Outer Start-->
                                 <aside class="tnit-sidebar-outer">
                                     <!--Widget Start-->
                                     <div class="widget widget-categories">
+                                        @if (Session::has('message'))
+                                        <div class="alert alert-success" >{{ Session::get('message') }}</div>
+                                        @endif
+                                        @if (Session::has('error'))
+                                            <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                                        @endif
                                         <h3>Upload CV</h3>
-                                        <form method="get" class="tl-review-form tnit-proceed-form">
+                                        <form method="post" class="tl-review-form tnit-proceed-form" action="{{ route('web.add_cv') }}" enctype="multipart/form-data">
+                                            @csrf
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <!--Inner Holder Start-->
                                                     <div class="inner-holder">
                                                         <label>Name <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                        <input type="text">
+                                                        <input type="text" name="full_name">
+                                                        @if($errors->has('full_name'))
+                                                            <span class="invalid-feedback" role="alert" style="color:red">
+                                                                <strong>{{ $errors->first('full_name') }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div><!--Inner Holder End-->
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <!--Inner Holder Start-->
                                                     <div class="inner-holder">
                                                         <label>Phone <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                        <input type="tel">
+                                                        <input type="tel" name="phone">
+                                                        @if($errors->has('phone'))
+                                                            <span class="invalid-feedback" role="alert" style="color:red">
+                                                                <strong>{{ $errors->first('phone') }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div><!--Inner Holder End-->
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <!--Inner Holder Start-->
                                                     <div class="inner-holder">
                                                         <label>Email address <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                        <input type="email">
+                                                        <input type="email" name="email">
+                                                        @if($errors->has('email'))
+                                                            <span class="invalid-feedback" role="alert" style="color:red">
+                                                                <strong>{{ $errors->first('email') }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div><!--Inner Holder End-->
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <!--Inner Holder Start-->
                                                     <div class="inner-holder">
                                                         <label>Designation <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                        <select name="address">
-                                                          <option value="country">USA</option>
-                                                          <option value="country">UK</option>
-                                                          <option value="country">UI</option>
+                                                        <select name="designation">
+                                                            @foreach($career as $values)
+                                                                <option value="{{ $values->designation }}">{{ $values->designation }}</option>
+                                                            @endforeach
+                                                          
                                                         </select>
+                                                        @if($errors->has('designation'))
+                                                            <span class="invalid-feedback" role="alert" style="color:red">
+                                                                <strong>{{ $errors->first('designation') }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div><!--Inner Holder End-->
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <!--Inner Holder Start-->
                                                     <div class="inner-holder">
+                                                       
                                                         <label>Upload CV <i class="fa fa-star" aria-hidden="true"></i></label>
-                                                        <input type="file">
+                                                        <input type="file" name="cv">
+                                                        @if($errors->has('cv'))
+                                                            <span class="invalid-feedback" role="alert" style="color:red">
+                                                                <strong>{{ $errors->first('cv') }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div><!--Inner Holder End-->
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -91,8 +126,8 @@
                                             <div class="row">
                                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                                     <div class="date-box">
-                                                        <span>27</span>
-                                                        Jun
+                                                        <span>{{date('d M', strtotime($data->created_at))}}</span>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="col-md-10 col-sm-10 col-xs-12">
@@ -112,63 +147,14 @@
                                     </ul><!--Event Listed End-->
                                 @endforeach
 
-                                <!--Event Listed Start-->
-                                {{-- <ul class="tnit-even-listed">
-                                    <!--Even Item Start-->
-                                    <li class="tnit-event-item">
-                                        <div class="row">
-                                            <div class="col-md-2 col-sm-2 col-xs-12">
-                                                <div class="date-box">
-                                                    <span>27</span>
-                                                    Jun
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10 col-sm-10 col-xs-12">
-                                                <div class="tnit-text">
-                                                    <h4 style="font-weight: 700">Line Supervisor</h4>
-                                                    <div class="career-sub-text">
-                                                        <h5>Roles & Responsibility</h5>
-                                                        <ul>
-                                                            <li> Manage the recruitment and selection process.</li>
-                                                            <li>Support current and future business needs through the development, engagement, motivation and preservation of human capital.</li>     
-                                                        </ul>
-                                                    </div>
-                                                    <div class="career-sub-text">
-                                                        <h5>Education</h5>
-                                                        <ul>
-                                                            <li>10+2 or equivalent </li>  
-                                                        </ul>
-                                                    </div>
-                                                    <div class="career-sub-text">
-                                                        <h5>Work Experience</h5>
-                                                        <ul>
-                                                            <li>1-3 years experience</li> 
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li><!--Even Item End-->
-                                </ul><!--Event Listed End-->
+                             
 
                                 <!--Pagination Row Start-->
                                 <div class="tnit-pagination-row pd-t70">
                                     <nav aria-label="navigation">
-                                        <ul class="pagination">
-                                        <li class="page-item active"><a class="page-link" href="#">
-                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                        </a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </a>
-                                        </li>
-                                        </ul>
+                                        {{ $career->onEachSide(3)->links() }}
                                     </nav>
-                                </div><!--Pagination Row End--> --}}
+                                </div><!--Pagination Row End--> 
 
                             </div>
                         </div>

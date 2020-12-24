@@ -11,28 +11,35 @@ Route::get('/About', function () {
     return view('web.about.about');
 })->name('web.about.about');
 
-Route::get('/product', function () {
-    return view('web.product.product');
-})->name('web.product.product');
+// Route::get('/product', function () {
+//     return view('web.product.product');
+// })->name('web.product.product');
 
 Route::group(['namespace' => 'Web'], function () {
     Route::get('/category','WebController@category')->name('web.category');
+    Route::get('/product/{id}','WebController@product')->name('web.product.product');
     Route::get('/Career','WebController@career')->name('web.career.career');
+    Route::get('/Testimonial','WebController@testimonial')->name('web.testimonial.testimonial');
+    Route::get('/Blog','WebController@blog')->name('web.blog.blog');
+    Route::get('/Blog-Detail/{slug}/{id}','WebController@blogDetail')->name('web.blog.blog-detail');
+    Route::put('/product/inquiry/{id}','WebController@inquiry')->name('web.inquiry');
+    Route::post('/add/contact','WebController@addContact')->name('web.add_contact');
+    Route::post('/add/cv','WebController@addCv')->name('web.add_cv');
 });
 
-Route::get('/Blog', function () {
-    return view('web.blog.blog');
-})->name('web.blog.blog');
+// Route::get('/Blog', function () {
+//     return view('web.blog.blog');
+// })->name('web.blog.blog');
 
 
-Route::get('/Blog-Detail', function () {
-    return view('web.blog.blog-detail');
-})->name('web.blog.blog-detail');
+// Route::get('/Blog-Detail', function () {
+//     return view('web.blog.blog-detail');
+// })->name('web.blog.blog-detail');
 
 
-Route::get('/Testimonial', function () {
-    return view('web.testimonial.testimonial');
-})->name('web.testimonial.testimonial');
+// Route::get('/Testimonial', function () {
+//     return view('web.testimonial.testimonial');
+// })->name('web.testimonial.testimonial');
 
 
 // Route::get('/Career', function () {

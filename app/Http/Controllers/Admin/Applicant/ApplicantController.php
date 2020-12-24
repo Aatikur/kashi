@@ -29,7 +29,7 @@ class ApplicantController extends Controller
             return datatables()->of($query->get())
             ->addIndexColumn()
             ->addColumn('resume', function($row){
-                $action = '<a  href="'.asset('web/resumes/'.$row->resume).'" class="btn btn-warning">Resume</a>';
+                $action = '<a  href="'.asset('web/documents/'.$row->resume).'" class="btn btn-warning">Resume</a>';
                 return $action;
             })
             ->addColumn('action', function($row){

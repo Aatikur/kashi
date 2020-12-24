@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function productListAjax(Request $request)
     {
-        return datatables()->of(Product::get())
+        return datatables()->of(Product::latest()->get())
             ->addIndexColumn()
             ->addColumn('category', function ($row) {
               
@@ -123,7 +123,8 @@ class ProductController extends Controller
     public function editProductForm($id){
         $product_details = Product::where('id',$id)->first();
         $category = Category::get();
-        return view('admin.product.edit_product_form',compact('product_details','category'));
+        $sub_category = SubCategory::get();
+        return view('admin.product.edit_product_form',compact('product_details','category','sub_category'));
     }
 
     public function updateProduct(Request $request,$id){
@@ -131,7 +132,7 @@ class ProductController extends Controller
             'name'   => 'required',
             'category'   => 'required',
             'sub_category'   => 'required',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         
             'mrp' => 'required',
             'price' => 'required',

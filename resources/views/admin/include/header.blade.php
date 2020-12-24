@@ -95,17 +95,20 @@
                         <li><a href="{{ route('admin.product_list') }}">All Products</a></li>
                       </ul>
                   </li>
-                  <li>
+                  {{-- <li>
                       <a><i class="fa fa-first-order" aria-hidden="true"></i> Order <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                         <li><a href="{{ route('admin.order')}}">All Orders</a></li>
                       </ul>
-                  </li>
+                  </li> --}}
                   {{-- <li>
                       <a href="{{ route('admin.getintouch') }}"><i class="fa fa-phone" aria-hidden="true"></i> Get In Touch </a>
                   </li> --}}
                   <li>
                       <a href="{{ route('admin.contact') }}"><i class="fa fa-envelope" aria-hidden="true"></i></i> Contact </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.inquiry_list') }}"><i class="fa fa-envelope" aria-hidden="true"></i></i> Product Inquiry </a>
                   </li>
                  
                   <li>

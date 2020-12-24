@@ -36,7 +36,7 @@ class CarrierController extends Controller
     }
 
     public function show(){
-        $query = Carrier::orderBy('created_at', 'DESC');
+        $query = Carrier::latest();
         return datatables()->of($query->get())
         ->addIndexColumn()
         ->addColumn('action', function($row){

@@ -88,7 +88,7 @@ class BlogsController extends Controller
     }
 
     public function show(){
-        $query = Blog::orderBy('created_at', 'DESC');
+        $query = Blog::latest();
         return datatables()->of($query->get())
         ->addIndexColumn()
         ->addColumn('action', function($row){

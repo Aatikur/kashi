@@ -65,13 +65,13 @@ Route::group(['namespace' => 'Admin'],function(){
         });
         
         // Order
-        Route::group(['namespace' => 'Order'], function () {
-            Route::get('/order', 'OrderController@index')->name('admin.order');
-            Route::get('/order/list', 'OrderController@show')->name('admin.ajax.order_list');
-            Route::get('/show/order/{id}', 'OrderController@showOrder')->name('admin.show_order');
-            Route::get('/order/invoice/{id}', 'OrderController@orderInvoice')->name('admin.order_invoice');
-            Route::get('/delete/order/{id}', 'OrderController@destroyOrder')->name('admin.delete_order');
-        });
+        // Route::group(['namespace' => 'Order'], function () {
+        //     Route::get('/order', 'OrderController@index')->name('admin.order');
+        //     Route::get('/order/list', 'OrderController@show')->name('admin.ajax.order_list');
+        //     Route::get('/show/order/{id}', 'OrderController@showOrder')->name('admin.show_order');
+        //     Route::get('/order/invoice/{id}', 'OrderController@orderInvoice')->name('admin.order_invoice');
+        //     Route::get('/delete/order/{id}', 'OrderController@destroyOrder')->name('admin.delete_order');
+        // });
 
         // User
         Route::group(['namespace' => 'User'], function () {
@@ -87,13 +87,19 @@ Route::group(['namespace' => 'Admin'],function(){
             Route::get('/show/application', 'ApplicantController@showApplicant')->name('admin.ajax.show_applicant');
             Route::get('/delete/applicant/{id}', 'ApplicantController@destroyApplicant')->name('admin.delete_applicant');
         });
+
+        Route::group(['namespace' => 'Inquiry'], function () {
+            Route::get('/product/inquiry/list', 'InquiryController@index')->name('admin.inquiry_list');
+            Route::get('/product/inquiry/list/ajax', 'InquiryController@show')->name('admin.inquiry_list_ajax');
+          
+        });
         
         // GetInTouch
-        Route::group(['namespace' => 'GetInTouch'], function() {
-            Route::get('/get/in/touch', 'GetInTouchController@index')->name('admin.getintouch');
-            Route::get('/show/in/touch', 'GetInTouchController@show')->name('admin.ajax.show_getintouch');
-            Route::get('/delete/get/in/touch/{id}', 'GetInTouchController@destroyGetInTouch')->name('admin.delete_getintouch');
-        });
+        // Route::group(['namespace' => 'GetInTouch'], function() {
+        //     Route::get('/get/in/touch', 'GetInTouchController@index')->name('admin.getintouch');
+        //     Route::get('/show/in/touch', 'GetInTouchController@show')->name('admin.ajax.show_getintouch');
+        //     Route::get('/delete/get/in/touch/{id}', 'GetInTouchController@destroyGetInTouch')->name('admin.delete_getintouch');
+        // });
 
         // Conatct
         Route::group(['namespace' => 'Contact'], function() {

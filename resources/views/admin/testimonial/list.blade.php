@@ -21,7 +21,7 @@
                 <th>Sl. No</th>
                 <th>Patient Name</th>
                 <th>Address</th>
-                <th>Image</th>
+                {{-- <th>Image</th> --}}
                 <th>Action</th>
               </tr>
             </thead>
@@ -45,7 +45,7 @@
                     { "render": function(data, type, full, meta) {return i++;}},
                     {data: 'name', name: 'name',searchable: true},
                     {data: 'address', name: 'address',searchable: true},
-                    {data: 'image', name: 'image',searchable: true},
+                    // {data: 'image', name: 'image',searchable: true},
                     {data: 'action', name: 'action',searchable: true},
                 ]
             });
